@@ -2,6 +2,7 @@ package org.sparta.post_lv1.service;
 
 import org.sparta.post_lv1.dto.PostRequestDto;
 import org.sparta.post_lv1.dto.PostResponseDto;
+import org.sparta.post_lv1.entity.Post;
 import org.sparta.post_lv1.repository.PostRepository;
 import org.springframework.stereotype.Service;
 

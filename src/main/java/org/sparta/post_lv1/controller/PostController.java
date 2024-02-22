@@ -20,23 +20,23 @@ public class PostController {
         return postService.createPost(requestDto);
     }
 
-    @GetMapping("/post/{postId}")
-    public Long getPost(@PathVariable Long id, @RequestBody PostRequestDto requestDto) {
-        return postService.getPost(id, requestDto);
-    }
-
-    @GetMapping("/posts/{postId}")
-    public Long getPosts(@PathVariable Long id, @RequestBody PostRequestDto requestDto) {
-        return postService.getPosts(id, requestDto);
-    }
-
-    @PutMapping("/post/{postId}")
-    public Long updatePost(@PathVariable Long id, @RequestBody PostRequestDto requestDto) {
-        return postService.updatePost(id, requestDto);
-    }
-
-    @DeleteMapping("/post/{postId}")
-    public Long deletePost(@PathVariable Long id,) {
-        return postService.deletePost(id);
-    }
+//    @GetMapping("/post/{postId}")
+//    public Long getPost(@PathVariable Long id, @RequestBody PostRequestDto requestDto) {
+//        return postService.getPost(id, requestDto);
+//    }
+//
+//    @GetMapping("/posts/{postId}")
+//    public Long getPosts(@PathVariable Long id, @RequestBody PostRequestDto requestDto) {
+//        return postService.getPosts(id, requestDto);
+//    }
+//
+//    @PutMapping("/post/{postId}")
+//    public Long updatePost(@PathVariable Long id, @RequestBody PostRequestDto requestDto) {
+//        return postService.updatePost(id, requestDto);
+//    }
+//
+//    @DeleteMapping("/post/{postId}")
+//    public Long deletePost(@PathVariable Long id) {
+//        return postService.deletePost(id);
+//    }
 }
