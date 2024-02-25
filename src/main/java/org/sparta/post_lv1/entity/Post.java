@@ -21,13 +21,20 @@ public class Post extends Timestamped {
     private String content;
     @Column(name = "title", nullable = false, length = 20)
     private String title;
-    @Column(name = "password", nullable = true)
-    private String passeord;
+    @Column(name = "password", nullable = false)
+    private String password;
 
     public Post(PostRequestDto requestDto) {
         this.username = requestDto.getUsername();
         this.content = requestDto.getContent();
         this.title = requestDto.getTitle();
-        this.passeord = requestDto.getPassword();
+        this.password = requestDto.getPassword();
+    }
+// put 메서드를 활용해 수정하려면 void 를 활용한 entity를 작성해야함.
+    public void update(PostRequestDto requestDto) {
+        this.username = requestDto.getUsername();
+        this.content = requestDto.getContent();
+        this.title = requestDto.getTitle();
+//        this.passeord = requestDto.getPassword();
     }
 }
