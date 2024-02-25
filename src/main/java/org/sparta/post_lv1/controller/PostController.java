@@ -5,6 +5,8 @@ import org.sparta.post_lv1.dto.PostResponseDto;
 import org.sparta.post_lv1.service.PostService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api")
 public class PostController {
@@ -20,23 +22,23 @@ public class PostController {
         return postService.createPost(requestDto);
     }
 
-//    @GetMapping("/post/{postId}")
-//    public Long getPost(@PathVariable Long id, @RequestBody PostRequestDto requestDto) {
-//        return postService.getPost(id, requestDto);
-//    }
-//
-//    @GetMapping("/posts/{postId}")
-//    public Long getPosts(@PathVariable Long id, @RequestBody PostRequestDto requestDto) {
-//        return postService.getPosts(id, requestDto);
-//    }
-//
-//    @PutMapping("/post/{postId}")
-//    public Long updatePost(@PathVariable Long id, @RequestBody PostRequestDto requestDto) {
-//        return postService.updatePost(id, requestDto);
-//    }
-//
-//    @DeleteMapping("/post/{postId}")
-//    public Long deletePost(@PathVariable Long id) {
-//        return postService.deletePost(id);
-//    }
+    @GetMapping("/post/{postId}") // 해당 게시물 상세조회 Long 타입 아님
+    public PostResponseDto getPost(@PathVariable Long postId) {
+        return postService.getPost(postId);
+    }
+
+    @GetMapping("/post")
+    public List<PostResponseDto> getFindAllPosts() {
+        return postService.getFindAllPosts();
+    }
+
+    @PutMapping("/post/{postId}")
+    public PostResponseDto updatePost(@PathVariable Long postId, @RequestBody PostRequestDto requestDto) {
+        return postService.updatePost(postId, requestDto);
+    }
+
+    @DeleteMapping("/post/{postId}")
+    public PostResponseDto deletePost(@PathVariable Long postId, @RequestBody PostRequestDto requestDto) {
+        return postService.deletePost(postId, requestDto);
+    }
 }
